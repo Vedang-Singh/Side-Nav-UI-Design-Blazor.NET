@@ -1,0 +1,11 @@
+﻿<nav class="sn-ctnr" style='display: @(AS.IsNavOpen ? "flex" : "none")'>
+    <span>Settings</span>
+    <span>Support</span>
+    <span>Wallet</span>
+    <span>Exit App</span>
+</nav>
+
+@code
+{
+    protected override void OnInitialized() => AS.OnChange += StateHasChanged;
+}

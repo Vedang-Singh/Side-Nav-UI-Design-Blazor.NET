@@ -1,0 +1,42 @@
+.page {
+    height: 100vh;
+    background: #222;
+    position: absolute;
+    overflow: hidden;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    background: #fff;
+    -moz-transition: .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    -o-transition: .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    -webkit-transition: .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    padding: 40px 30px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    /* transform: translate(-50%, -50%); */
+}
+
+main.sn-on{
+    /* height: 80vh !important; */
+    top: 0%;
+    left: 50%;
+    border-radius: 35px;
+    transform: translate(-0%, -0%) scale(0.8);
+}
+
+.touch-closenav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+
+    z-index: 1;
+}

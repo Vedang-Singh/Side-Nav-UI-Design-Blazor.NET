@@ -1,0 +1,54 @@
+﻿/* 
+    This Nav-Icon Animation is taken from:
+    https://codepen.io/Danilo06/pen/PoNNvGm
+*/
+
+.nav-cb {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    cursor: pointer;
+}
+
+    .nav-cb span {
+        background: #555;
+        border-radius: 10px;
+        height: 7px;
+        margin: 7px 0;
+        transition: .4s ease;
+    }
+
+
+.a1 {
+    width: 50%;
+}
+
+.a2 {
+    width: 100%;
+}
+
+.a3 {
+    width: 75%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+    input[type="checkbox"]:checked ~ .a1 {
+        transform-origin: bottom;
+        transform: rotatez(45deg) translate(8px,0px)
+    }
+
+
+    input[type="checkbox"]:checked ~ .a2 {
+        transform-origin: top;
+        transform: rotatez(-45deg)
+    }
+
+
+    input[type="checkbox"]:checked ~ .a3 {
+        transform-origin: bottom;
+        width: 50%;
+        transform: translate(30px,-11px) rotatez(45deg);
+    }

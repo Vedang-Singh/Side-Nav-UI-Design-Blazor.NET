@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <main class=@(AS.IsNavOpen ? "sn-on" : "")>
+        <div class="touch-closenav" hidden=@(!AS.IsNavOpen) @onclick="() => { AS.IsNavOpen = false; }"></div>
+        <article>
+            @Body
+        </article>
+        <BottomNavMenu />
+    </main>
+    <SideNav />
+</div>
+
+@code
+{
+    protected override void OnInitialized() => AS.OnChange += StateHasChanged;
+}

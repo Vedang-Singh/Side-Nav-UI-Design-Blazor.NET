@@ -1,0 +1,17 @@
+﻿@* 
+    This Nav-Icon Animation is taken from:
+    https://codepen.io/Danilo06/pen/PoNNvGm
+*@
+
+<div style="transform: scale(.6)">
+    <label for="nav-cb" class="nav-cb">
+        <input type="checkbox" id="nav-cb" @bind=AS.IsNavOpen @onclick=@(() => AS.IsNavOpen = !AS.IsNavOpen) />
+        <span class="a1"></span>
+        <span class="a2"></span>
+        <span class="a3"></span>
+    </label>
+</div>
+@code
+{
+    protected override void OnInitialized() => AS.OnChange += StateHasChanged;
+}

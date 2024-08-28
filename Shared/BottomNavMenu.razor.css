@@ -1,0 +1,14 @@
+.bn-ctnr {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: #eee;
+    /* padding: 25px 0; */
+    flex-direction: column;
+    box-shadow: 0px 0px 8px #00000040;
+    transition: .3s;
+    height: 8vh;
+}

@@ -1,0 +1,95 @@
+﻿<div class="bn-ctnr" style='height: @(AS.BottomNavMenuBtnVisible ? "12vh" : "8vh");'>
+    <nav >
+        <NavLink class="material-symbols-outlined" ActiveClass="nl-active" href="/" Match="NavLinkMatch.All">
+            home
+        </NavLink>
+
+        <NavLink ActiveClass="nl-active" href="/cart" class="material-symbols-outlined">
+            shopping_cart
+        </NavLink>
+
+        <NavLink ActiveClass="nl-active" href="/profile" class="material-symbols-outlined">
+            person
+        </NavLink>
+
+        <NavLink ActiveClass="nl-active" href="/offers" class="material-symbols-outlined">
+            sell
+        </NavLink>
+    </nav>
+    @if (AS.BottomNavMenuBtnVisible)
+    {
+        <NavLink class="btmn-b" href=@AS.BottomNavMenuBtnActionUrl>
+            @AS.BottomNavMenuBtnText 
+            <span class="material-symbols-outlined">
+                arrow_forward
+            </span>
+        </NavLink>
+    }
+</div>
+
+<style>
+    .bn-ctnr nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 0px 0;
+        min-height: 55px;
+        height: 50%;
+        align-items: center;
+    }
+    .bn-ctnr  nav  a {
+        font-size: 2em;
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .nl-active {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48 !important;
+    }
+
+    .btmn-b {
+        background: #59adf7;
+        border: navajowhite;
+        color: #fff;
+        /* padding: 12px 2rem; */
+        font-size: 1.2em;
+        gap: 2rem;
+        border-radius: 30px 0px 0 0;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0px 8px #8e86db4f;
+        text-decoration: none;
+        text-align: center;
+        transition: .3s;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: ani01 .3s;
+        height: 50%;
+    }
+
+    @@keyframes ani01
+    {
+        0%{
+            opacity: 0;
+            height: 0;
+        }
+        100%{
+            height: 50%;
+            opacity: 1;
+        }
+    }
+
+    .btmn-b:hover
+    {
+        color: #fff;
+        background-color: darkblue;
+    }
+</style>
+
+@code
+{
+    protected override void OnInitialized() => AS.OnChange += StateHasChanged;
+}

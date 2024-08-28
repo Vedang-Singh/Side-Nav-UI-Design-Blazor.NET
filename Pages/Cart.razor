@@ -1,0 +1,24 @@
+﻿@page "/cart"
+@implements IDisposable;
+
+<PageTitle>My Cart</PageTitle>
+<PageHeader Title="My Cart" />
+
+<Text />
+
+@code
+{
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            AS.OnChange += StateHasChanged;
+            AS.BottomNavMenuBtnVisible = true;
+            @* AS.ShowBottomNavMenuBtn("Checkout", "/checkout"); *@
+        }
+
+        public void Dispose()
+        {
+            AS.BottomNavMenuBtnVisible = false;
+            AS.OnChange -= StateHasChanged;
+        }
+}
